@@ -20,7 +20,7 @@
 
 ###########################
 # TODO: new feature ********** IMP ******************
-# search in IPs - or SORT - use Table *************
+# search in IPs - or SORT - use Table ***************
 #
 # IMPLEMENT like this: use combo-box from Ping -> make sortable...and when selected -> select in list (similar to selection when clicking killed process...)
 #
@@ -41,8 +41,6 @@
 # bocking rule of a RANGE of IPs, extracted from infos obtained with Whosip
 ###########################
 
-
-    
 #########################################
 # TODOs - general:
 # clean up code:
