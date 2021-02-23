@@ -1,4 +1,4 @@
-# IPRadar2
+# IP Radar 2
 Real-time detection and defense against malicious network activity and policy violations (exploits, port-scanners, advertising, telemetry, state surveillance, etc.)
 
 https://www.codeproject.com/Articles/5269206/IP-Radar-2
