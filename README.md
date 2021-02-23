@@ -1,7 +1,7 @@
 # IP Radar 2
 Real-time detection and defense against malicious network activity and policy violations (exploits, port-scanners, advertising, telemetry, state surveillance, etc.)
 
-https://www.codeproject.com/Articles/5269206/IP-Radar-2
+[Article in Code Project](https://www.codeproject.com/Articles/5269206/IP-Radar-2 "IP Radar 2 Article in Code Project")
 
 ## IP Radar 2 - Intrusion Detection and Prevention in Real Time Based, e.g., on Geographical Locations of Hosts
 
@@ -11,6 +11,6 @@ https://www.codeproject.com/Articles/5269206/IP-Radar-2
 
 ![plot](./img/app1.jpg)
 
-## IP Radar 1 (original SW)
+## IP Radar (original SW)
 
 [Video Playlist](https://www.youtube.com/watch?v=EBGdES2b-zE&list=PLX24fhcibpHUbVMLRvzB5kC9kmXOvMXq_ "IP Radar (original SW) Video Playlist")
