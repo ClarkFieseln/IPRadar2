@@ -1,0 +1,2 @@
+copy Whosip into this folder:
+      (you can get it from here https://www.nirsoft.net/utils/whosip.html)

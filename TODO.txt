@@ -1,0 +1,255 @@
+###########################
+# TODO: new feature ********** IMP ******************
+# Add below "Show nodes": active conn.
+###########################
+
+###########################
+# TODO: new feature ********** IMP ******************
+# QUIT-Function: popup needs to be quit every time a BAD guy is detected
+#           we force the attention of the user and take the chance to decide:
+#           - add to blacklist?
+#           - add rule? -> range X -> Y
+###########################
+
+###########################
+# TODO: new feature ********** IMP ******************
+# start NetworkTrafficView automatically on start -> option   (# note: for checking NW connections e.g. avira-VPN - strange names of servers...)
+# add a button to start it only once..one instance only..check first...
+# NOTE: long period of CPU at 12% due to this tool !!!
+###########################
+
+###########################
+# TODO: new feature ********** IMP ******************
+# search in IPs - or SORT - use Table *************
+#
+# IMPLEMENT like this: use combo-box from Ping -> make sortable...and when selected -> select in list (similar to selection when clicking killed process...)
+#
+###########################
+
+###########################
+# TODO: workaround for Avira - hosts without owner name!
+# new category of audit based on Network Name: XXX as indicated by whilte-list for networks...
+# e.g.: Network Name: M247-LAS-VEGAS
+###########################
+    
+###########################
+# TODO: new feature ********** IMP ******************
+# WARNING: if kiddy behind Telekom-Deutschland then complete Telekom blocked!!!
+#      - when range blocked need USER CONFIRMATION first !!!!!!!!!!!!!
+#        but dont block anything...just buffer...use different thread????
+# WARNING: not yet clear if EMPTY owners really bad, we may block GOOD BIG things...
+# bocking rule of a RANGE of IPs, extracted from infos obtained with Whosip
+###########################
+
+
+    
+#########################################
+# TODOs - general:
+# clean up code:
+#    check TODOs
+#    rename functions and variables
+#    remove obsolete code
+#    check consistent use of mutexes
+#    etc.
+# implement logging levels
+# use a nice icon 
+# add ToolTips
+# check again memory leak when using playsound() -> windows bug!
+# implement live capture on/off
+
+#######################
+# TODOs - some BUGs:
+# if we start without NW then it does not work
+# if we close and open laptop then it does not work
+# USE_DOUBLE_BUFFER
+# handle broadcast, multicast and other protocols in a proper manner
+#    locals, multicast, broadcast, etc.:
+#    10.0.0.0 - 10.255.255.255
+#    127.0.0.0 - 127.255.255.255
+#    169.254.0.0 - 169.254.255.255
+#    172.16.0.0 - 172.31.255.255
+#    192.168.0.0 - 192.168.255.255
+#    224.0.0.0 - 239.255.255.255 
+#######################
+
+#######################
+# TODO: improvement
+# divide config.ini in appropriate "sections"
+#######################
+
+#######################
+# TODO: improvement
+# add IPv6 support?
+# for now just deactivate IPv6 on your network interface.
+#######################
+
+#######################
+# TODO: new feature
+# replace list of nodes in GUI with a sortable table
+#######################
+
+#######################
+# TODO: solve BUG
+# markers with same geo-location are NOT distributed in a "circle"
+#######################
+
+#######################
+# TODO: improvement
+# see if there is a way to obtain the COMPUTER NAME of a machine in the lcoal NW
+#######################
+
+#######################
+# TODO: new feature
+# option to detect own location instead of using fix values from config.ini (see MY_LATITUDE, etc.)
+# this way we can e.g. see if we really appear somewhere else when we use a VPN.
+#######################
+
+###########################
+# TODO: code cleaning
+# remove deprecated counters for failed-past, resol-past
+# on GUI (hidden below): statusHostsRequested, statusHostsFailed, statusHostsFailedOld, statusHostsResolvedOld
+###########################
+
+###########################
+# TODO: new feature
+# bocking rule of a RANGE of IPs, extracted from infos obtained with Whosip
+###########################
+
+###########################
+# TODO: check/remove workaround in processor.py
+# why do we need to check against sanitized_ip?
+###########################
+
+###########################
+# TODO: new feature
+# out to console & file simultaneously
+# > pipe ? script ? 
+# fork stdout and stderr both to file and to shell ?
+###########################
+
+###########################
+# TODO: improvement
+# replace lists with dicts
+# to avoid for [] + for [] every time..
+###########################
+
+###########################
+# TODO: new feature
+# create Option to use Google API KEY
+# but from File !
+###########################
+    
+###########################
+# TODO: new feature
+# set Labels for known IPs manually
+# and then store in file
+###########################
+
+###########################
+# TODO: new feature
+# add an "interface" between running Javascript and IPRadar2
+# in order to have a smooth update of infos on the browser..
+###########################
+
+###########################
+# TODO: new feature
+# set/unset BAD directly on browser (manually)
+###########################
+
+###########################
+# TODO: new feature
+# when blocking consider also a time-window ?
+# network protocol, port number, etc. ?
+###########################
+
+###########################
+# TODO: improvement / BUG?
+# activation / deactivation of add-blocking-rule-to-firewall
+# e.g. not only adding rule when host resolved, but also later if re-enabled, etc.
+###########################
+
+###########################
+# TODO: new feature
+# PORTS SCANNER
+# what for? which ports?
+###########################
+
+########################
+# TODO: improvement
+# killed-IPs get lost when reading log_DATE.pcapng alone...
+# the information killed=True is in the corresponding report_DATE.txt, it can be parsed from there..
+# ..or store infos somwhere else? e.g. in a killed.txt/npy file?
+########################
+
+##################
+# TODO: BUG
+# why and when do "we" write None in lat, lon? default? Geo-calculation?
+##################
+
+##################
+# TODO: improvement
+# try to RUN_AS_ADMIN and still:
+# - be able to debug
+# - reuse current App (dont start a new instance)
+# - dont duplicate background threads of both apps..
+##################
+
+##################
+# TODO: new feature
+# INTERACTIVE MAP:
+# * select line and show infos (RX, TX bytes, timestampt).. Labels in Google Maps
+# * show nr. of packets/bytes and date of each connection in title
+# * select on GUI after selection on maps
+# * etc.
+##################
+
+##################
+# TODO: improvement 
+# add IPs detected with netstat which are NOT in node_dict...e.g. connections established "before" running IPRadar2
+##################
+
+##################
+# TODO: new feature
+# show current connections that are:
+# waiting/listening also with a symbol on the side towards corresponding IP
+##################
+
+##################
+# TODO: new feature
+# integrate pynids?
+# https://pypi.org/project/pynids/
+# wrapper for libnids, a Network Intrusion Detection System library offering sniffing, IP defragmentation, TCP stream reassembly and TCP port scan detection
+##################
+
+##################
+# TODO: new feature
+# show TRACERT results on map
+##################
+
+####################
+''' TODO: new features
+    Use this tool in combination with one or more of these tools (interfaces available?):
+    Wireshark
+    ipscan
+    cports
+    NetworkMiner
+    NetworkTrafficView
+    DNSQuerySniffer
+    HTTPNetworkSniffer
+    MicrosoftMessageAnalyzer
+    MicrosoftNetworkMonitor
+    TcpLogView
+    syswranalyzer
+    ipnetinfo (DONE)
+    DomainHostView
+    NetRouteView
+    ostinate - similar to cports?
+    whois - (does not work)
+    WifiChannelMonitor - (does not work? Antivirus blocks it)
+    WifiInfoView (shows available infos of WLANs in neighborhood)
+    RawCap
+'''
+#####################
+
+
+

@@ -1,0 +1,9 @@
+copy these files:
+
+Qt5Core.dll
+Qt5Gui.dll
+Qt5Widgets.dll
+
+from here:
+
+installation_path\Python37\Lib\site-packages\PyQt5\Qt\bin

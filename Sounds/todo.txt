@@ -1,0 +1,27 @@
+this is how this folder shall look like to match the code:
+ 
+>tree /F
+│   dk-a2600_jump.mp3
+│   dk-a2600_walk_short.mp3
+│   mb_sc.mp3
+│   mb_touch.mp3
+│   smb_bump.mp3
+│   smb_gameover.mp3
+│   smb_mariodie.mp3
+│   todo.txt
+│
+└───Alarm
+        salamisound-4299638-alarm-sirene-13-mal-heulen.mp3
+        salamisound-8723691-alarm-sirene-auto.mp3
+
+you can get the first 7 .wav files I used from here:
+https://themushroomkingdom.net/media/smb/wav
+
+you can then convert them to .mp3 using Audacity:
+https://www.audacityteam.org/
+
+or you can use the .wav files directly by changing the extensions to .wav in the code.
+
+The files in folder Alarm can be obtained from these links:
+https://www.salamisound.de/4299638-alarm-sirene-13-mal-heulen
+https://www.salamisound.de/8723691-alarm-sirene-auto
