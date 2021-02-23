@@ -11,6 +11,6 @@ https://www.codeproject.com/Articles/5269206/IP-Radar-2
 
 ![plot](./img/app1.jpg)
 
-## IP Radar (original SW) Video Playlist
+## IP Radar 1 (original SW)
 
-[I'm an inline-style link with title](https://www.youtube.com/watch?v=EBGdES2b-zE&list=PLX24fhcibpHUbVMLRvzB5kC9kmXOvMXq_ "IP Radar (original SW) Video Playlist")
+[Video Playlist](https://www.youtube.com/watch?v=EBGdES2b-zE&list=PLX24fhcibpHUbVMLRvzB5kC9kmXOvMXq_ "IP Radar (original SW) Video Playlist")
