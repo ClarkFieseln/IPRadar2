@@ -1,10 +1,10 @@
-pywin32==225
-psutil==5.6.3
-gmplot==1.2.0
 getmac==0.8.2
-pythonping==1.0.8
+psutil==5.8.0
 playsound==1.2.2
-ip2geotools==0.1.5
 pycountry==19.8.18
+pythonping==1.0.8
+pywin32==225
+gmplot==1.2.0
+ip2geotools==0.1.5
 requests==2.22.0
-dataclasses==0.7
+dataclasses==0.8
