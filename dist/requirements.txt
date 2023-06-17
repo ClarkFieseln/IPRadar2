@@ -6,5 +6,5 @@ pythonping==1.0.8
 pywin32==225
 gmplot==1.2.0
 ip2geotools==0.1.5
-requests==2.22.0
+requests==2.31.0
 dataclasses==0.8
