@@ -1,6 +1,6 @@
 ip2geotools==0.1.5
 gmplot==1.2.0
-requests==2.22.0
+requests==2.31.0
 getmac==0.8.2
 psutil==5.8.0
 pycountry==19.8.18
