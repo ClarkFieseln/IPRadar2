@@ -1,0 +1,1 @@
+output folder when IPRadar2 is run as an .exe
