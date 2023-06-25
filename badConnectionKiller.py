@@ -102,7 +102,7 @@ class BadConnectionKillerClass(object):
                             message = "Killed process " + pname + " with PID = " + pid + " connected to " + IP
                             self.__ipKilledListComplete.append(pname+" ("+IP+")")
                             if configuration.SOUND:
-                                playsound('Sounds/smb_gameover.mp3')
+                                playsound('Sounds/smb_gameover.mp3', block=False)
                         else:
                             message = "**** We DO NOT KILL " + pname + " with PID = " + pid + " connected to " + IP
                         print(message)
@@ -156,7 +156,7 @@ class BadConnectionKillerClass(object):
                                 print(message)
                                 self.__ipKilledListComplete.append(pname+" ("+badIP+")")
                                 if configuration.SOUND:
-                                    playsound('Sounds/smb_gameover.mp3')
+                                    playsound('Sounds/smb_gameover.mp3', block=False)
                             except:
                                 print("Could not kill PID = ",  pid)
                         else:
@@ -205,8 +205,11 @@ class BadConnectionKillerClass(object):
                     activeIP = line[posSpace+1:posDoublePoint]
                     if activeIP not in self.__ipConnectedList:
                         self.__ipConnectedList.append(activeIP)
-                    message = "Found NEW connected IP = " + activeIP
-                    print(message)
+                        message = "Found NEW connected IP = " + activeIP
+                        print(message)
+                    # else:
+                        # message = "Found still connected IP = " + activeIP
+                        # print(message)
             else:
                 print("Error: could not execute netstat correctly to find active connections with command = ",  command)
                 pass
@@ -214,7 +217,7 @@ class BadConnectionKillerClass(object):
             p1.terminate()
             p1.kill()
             if configuration.SOUND: # play sound every time we checked...
-                playsound('Sounds/dk-a2600_walk_short.mp3')
+                playsound('Sounds/smb_stomp.mp3', block=False)
             # set counter
             self.numberOfConnections = len(self.__ipConnectedList)
         except Exception as e: # avoid catching exceptions like SystemExit, KeyboardInterrupt, etc.
@@ -401,7 +404,7 @@ class BadConnectionKillerClass(object):
                         print(message)
                         self.__ipKilledListComplete.append(pname+" ("+ip+")")
                         if configuration.SOUND:
-                            playsound('Sounds/smb_gameover.mp3')
+                            playsound('Sounds/smb_gameover.mp3', block=False)
                     except:
                         print("Could not kill PID = ",  pid)
                 else:
