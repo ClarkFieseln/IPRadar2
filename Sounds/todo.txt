@@ -1,10 +1,10 @@
 this is how this folder shall look like to match the code:
  
 >tree /F
-│   dk-a2600_jump.mp3
-│   dk-a2600_walk_short.mp3
+│   smb_jump-small.mp3
+│   smb_stomp.mp3
 │   mb_sc.mp3
-│   mb_touch.mp3
+│   smb_flagpole.mp3
 │   smb_bump.mp3
 │   smb_gameover.mp3
 │   smb_mariodie.mp3
