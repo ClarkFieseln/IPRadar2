@@ -898,7 +898,7 @@ class ProcessorClass(object):
                     # play alarm?
                     ########
                     if configuration.SOUND:
-                        playsound('Sounds/Alarm/salamisound-8723691-alarm-sirene-auto.mp3')
+                        playsound('Sounds/Alarm/salamisound-8723691-alarm-sirene-auto.mp3', block=False)
                         
                 # add/modify updated IP to GUI-List
                 #####################
@@ -1098,7 +1098,7 @@ class ProcessorClass(object):
                 self.tx_kilo_bytes_alarm = 0.0
                 print("ALARM: got more TX bytes than maximum = ",  configuration.MAX_TX_KILOBYTES)
                 if configuration.SOUND:
-                    playsound('Sounds/Alarm/salamisound-4299638-alarm-sirene-13-mal-heulen.mp3') 
+                    playsound('Sounds/Alarm/salamisound-4299638-alarm-sirene-13-mal-heulen.mp3', block=False)
         elif receiving:
             self.rx_kilo_bytes = self.rx_kilo_bytes + float(packet.length)/1024.0
 
@@ -1117,9 +1117,9 @@ class ProcessorClass(object):
             # different sound for local and remote connections
             if configuration.SOUND:
                 if src_is_local and dst_is_local:
-                    playsound('Sounds/mb_sc.mp3') 
+                    playsound('Sounds/mb_sc.mp3', block=False)
                 else:
-                    playsound('Sounds/mb_touch.mp3') 
+                    playsound('Sounds/smb_flagpole.mp3', block=False)
             
             # resolve geolocation for source address
             ######################
@@ -1252,7 +1252,7 @@ class ProcessorClass(object):
                     self.hostsResolutionRequested.append(source)
                     self.hostResolverObject.putHostToResolve(source)
                     if configuration.SOUND:
-                        playsound('Sounds/smb_bump.mp3')
+                        playsound('Sounds/smb_bump.mp3', block=False)
             if dst_is_local == False:
                 if destination in self.hostsResolved:
                     host_dst = self.hostsResolved[destination]
@@ -1263,7 +1263,7 @@ class ProcessorClass(object):
                     self.hostsResolutionRequested.append(destination)
                     self.hostResolverObject.putHostToResolve(destination)
                     if configuration.SOUND:
-                        playsound('Sounds/smb_bump.mp3')
+                        playsound('Sounds/smb_bump.mp3', block=False)
                  
             # MAC address
             #########
