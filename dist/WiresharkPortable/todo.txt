@@ -1,11 +1,8 @@
 install WiresharkPortable into this folder:
       (you can get it from here https://www.wireshark.org/download.html)
-      (this version used: WiresharkPortable_3.2.3.paf)
 
-NOTE: although the name implies that we have a "portable" version of wireshark, I experienced
-                problems when trying to use a copy stored somewhere else. 
-
-you need to install also Npcap - for that you need admin rights!
+you may need to install also Npcap - for that you need admin rights!
       (you can get it from here https://nmap.org/npcap/#download)
-      (this version used: npcap-0.9990.exe)
+
+
  
