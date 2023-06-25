@@ -91,7 +91,7 @@ class pysharkSniffer:
                 interface = str(interface)
                 # need to change \\ into \
                 interface = interface.replace("\\\\",  "\\")
-                interfaceStr = interface[interface.find(".")+1:find_2nd(interface, " ")]
+                interfaceStr = interface[interface.find(".")+2:find_2nd(interface, " ")]
                 interfaceDescriptionStr = interface[find_2nd(interface, " ")+1:len(interface)-1]
                 self.tsharkInterfaces[interfaceStr] = interfaceDescriptionStr
                 print("Interface {} = {} {}".format(interfaceNr,  interfaceStr,  interfaceDescriptionStr))
@@ -416,7 +416,12 @@ class pysharkSniffer:
             ########
             print("opening interface ", self.interface)
             outputfile = './Output/log_'+configuration.START_TIME+'.pcapng'
-            self.capture = pyshark.LiveCapture(interface=self.interface, output_file=outputfile)
+            ################
+            import asyncio
+            loop = asyncio.new_event_loop()
+            # asyncio.set_event_loop(loop) # NOTE: this isn't necessary, it seems to be done later in pyshark
+            #################
+            self.capture = pyshark.LiveCapture(eventloop=loop, interface=self.interface, output_file=outputfile)
             # TODO: check why ring capture does not work. After we set the callback it never gets called.
             #             self.capture = pyshark.LiveRingCapture(interface=interface, ring_file_name=outputfile)
             #######################################################    
