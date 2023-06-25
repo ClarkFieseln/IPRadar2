@@ -259,8 +259,7 @@ BlackListCity = [
 ###############################
 WhiteListCity = [
 "Centreville", # ARIN in US - white-listed double by country and by city
-"San Francisco",
-# "Seattle", # Amazon  
+"San Francisco", 
 "Los Angeles"
 ]
 
