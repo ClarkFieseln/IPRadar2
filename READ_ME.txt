@@ -1,4 +1,4 @@
-Instructions to install IPRadar2 (2021.02.23): 
+Instructions to install IPRadar2 (2023.06.25): 
 
 **************************************************************************************************
 WARNING! 
@@ -8,65 +8,76 @@ If not properly configured, this tool may cause unforeseen system behavior.
 Note: in case of problems firewall rules can be easily removed any time.
 **************************************************************************************************
 
-1) install eric6 IDE and all required dependencies (like PyQt5), check the file requirements.txt
-    (configure your environment as required)
+1) Install PyCharm, you can get it here: 
+          https://www.jetbrains.com/pycharm/
+   copy the sources provided in GitHub or in CodeProject to some directory:
+          GitHub: https://github.com/ClarkFieseln/IPRadar2
+          CodeProject: https://www.codeproject.com/Articles/5269206/IP-Radar-2
+   Open PyCharm, press the button New Project -> select the location of the folder with the sources copied in the previous step.
+   (leave the default path to the virtual enviroment, which is inside your project folder (the new folder is called venv)).
+   Select Python39 as the Base interpreter (a different interpeter may be selected, but you may need to adapt the dependencies later).
+   Don't inherit global site-packages, I think it is cleaner if we only depend on the things we really need.
+   We also don't need to make this new enviroment be available to all projects.
+
+   You then get a Warning Message telling you that the "Directory is Not Empty" -> select "Create from Existing Sources"  (an .idea folder is created).
+   
+   The project path may need to be added to Microsoft Defender (select option Automatically in Warning-window at the bottom-right side).
+
+   Go to Edit Configurations -> select "+" to add a new configuration  -> select Python -> call it IPRadar2.
+   Select IPRadar2.py in Script path   ->  Press OK.
+
+   Select "Install requirements" when the warning appears that some Package requiremetns are not fulfilled.
+   (you then get a list, leave all checked, select Install).
+   Check also related steps 7) and 8).
     
-2) configure config.ini as required
-     IMPORTANT: Note that the default values are just arbitrary and need to be adapted!
-                                   Get familiar with the behavior of the tool before you set ADD_FIREWALL_RULE_BLOCK_BAD_IP to 1.
+2) Configure config.ini as required
+   IMPORTANT: Note that the default values are just arbitrary and need to be adapted!
+              Get familiar with the behavior of the tool before you set ADD_FIREWALL_RULE_BLOCK_BAD_IP to 1.
  
-3) in folder /backups you find some files you need to replace in the corresponding installation paths:
-    installation_path\Python37\Lib\site-packages\pyshark\capture\capture.py
-    installation_path\Python37\Lib\site-packages\gmplot\gmplot.py # the interface has been extended!
-    installation_path\Python37\Lib\site-packages\pyshark\tshark\tshark.py
-    # installation_path/Python37/Lib/site-packages/PyQt5/ __init__.py # bug solved with new version, don't need to adapt
+3) Make a copy of the file \venv\Lib\site-packages\gmplot\gmplot.py 
+   Then replace it with \backups\gmplot.py 
+   Note: the interface has been extended.
 
-4) copy ipnetinfo into this folder:
+4) Copy ipnetinfo into this folder:
       \myProject\dist\ipnetinfo
-      (you can get it from here https://www.nirsoft.net/utils/ipnetinfo.html)
+   You can get it from here https://www.nirsoft.net/utils/ipnetinfo.html
 
-5) copy Whosip into this folder:
+5) Copy Whosip into this folder:
       \myProject\dist\WhosIP
-      (you can get it from here https://www.nirsoft.net/utils/whosip.html)
+   You can get it from here https://www.nirsoft.net/utils/whosip.html
 
-6) install WiresharkPortable into this folder:
-     \myProject\dist\WiresharkPortable
-     (you can get it from here https://www.wireshark.org/download.html)
-     (this version used: WiresharkPortable_3.2.3.paf)
-     you need to install also Npcap - for that you need admin rights!
-     (you can get it from here https://nmap.org/npcap/#download)
-     (this version used: npcap-0.9990.exe)
+6) Install WiresharkPortable into this folder:
+      \myProject\dist\WiresharkPortable
+   You can get it from here https://www.wireshark.org/download.html
+   You may also need to install also Npcap (optional step)
+   You can get it from here https://nmap.org/npcap/#download
 
-7) in folder \myProject\dist\PyQt5\Qt\bin copy these files:
-    Qt5Core.dll
-    Qt5Gui.dll
-    Qt5Widgets.dll
-    you can get these files from here:
-    installation_path\Python37\Lib\site-packages\PyQt5\Qt\bin
+7) This step is ONLY needed e.g. if step 1) in PyCharm went wrong or a different interpreter is used:
+    In your PyCharm project, open the Terminal inside PyCharm, make sure the the virtual environment is activated i.e. Terminal prompt starts with (venv)...
+    Then type:
+       pip install -r requirements.txt
 
-8) obtain the audio files as described in todo.txt found in folder Sounds.
+8) Install required tools:    
+    Type in the PyCharm console:
+       pip install pyqt5 pyqt5-tools
+       pip install pipreqs
+    (optional: python -m pip install pywin32 (already covered at the end of 1)))
 
-9) for the next steps you shall check your antivirus settings.
-     Some antiviruses may block IPRadar2. Make sure you add it to the exception list of your antivirus if required.
-     You may need to do this during or after steps 9) and 10).
-     In rare cases you may also need to check your firewall settings.
+9) Obtain the audio files as described in todo.txt found in folder Sounds.
 
-10) in Eric6, go to Project -> new Project 
-     -> in project folder select the path with the sources 
-     -> in main file select IPRadar2.py
-     -> press OK
-     -> IDE will ask something like "add existing files to project?"
-     -> press YES, then OK 
-     (do this only in case of problems: -> go to Forms tab, right-mouse-click on ui/mainWindow.ui -> translate Form)
-     Press the button "Execute project", then hit OK
+10) Generate an executable file (in just a few seconds!): of size 56MB in my case..
+   In the PyCharm Terminal type: 
+      pip install pyinstaller
+      .\gen_exe_with_pyinstaller.bat
+      (alternatively, you may double click on gen_exe_with_pyinstaller.bat  
 
-11) generate an executable file:
-     double click on gen_exe_with_pyinstaller.bat
-     (the generated file IPRadar2.exe will be inside folder /dist - you can now execute it)
-     (note that there is an own config.ini file for the executable)
-     (the folder dist/Sounds is empty, you can copy the files from one level above)
+   The generated file IPRadar2.exe will be inside folder /dist
+   Note that there is an own config.ini file for the executable that you also need to adapt.
+   The folder dist/Sounds is empty, you can copy the files from the folder Sounds one level above.
+   Now you can now execute the file IPRadar2.exe
 
-12) How to use tool: check the Code Project article IPRadar2:
-    https://www.codeproject.com/Articles/5269206/IP-Radar-2
+11) Check the Code Project article IPRadar2 that explains how to use the tool:
+       https://www.codeproject.com/Articles/5269206/IP-Radar-2
+
 
 
