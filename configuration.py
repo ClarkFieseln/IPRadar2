@@ -22,10 +22,12 @@ FONT_SIZE = 8
 RULE_NAME_STR = "Rule name"
 
 # connection "established" has to be set to the corresponding language
-# run cmd:
-# >netstat -an
+# obtain the text by running cmd and typing:
+# netstat -an
 # check for "established" connections in column Status
+# *** for other languages the text changes, set as it corresponds in your case ***
 CONN_ESTABLISHED_STR = "ESTABLISHED"
+# CONN_ESTABLISHED_STR = "HERGESTELLT"
 
 # add a new rule in Windows Firewall to block a BAD-IP automatically
 # WARNING!   ->  if set to True, then RUN_AS_ADMIN shall also be set to True !!!
@@ -86,7 +88,7 @@ PACKED_OUTPUT = False
 GeoLocationRadius = 0.1
 
 # local router
-ROUTER_IP = "192.168.0.1"
+ROUTER_IP = "192.168.178.1"
 
 # public IP
 # can be found here:
