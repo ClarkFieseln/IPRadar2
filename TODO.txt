@@ -1,4 +1,12 @@
 ###########################
+# TODO: adapt code to fulfill PEP 8
+###########################
+
+###########################
+# TODO: replace print() with logging.info(), logging.warning() and logging.error() as it corresponds
+###########################
+
+###########################
 # TODO: new feature ********** IMP ******************
 # Add below "Show nodes": active conn.
 ###########################
@@ -27,7 +35,7 @@
 ###########################
 
 ###########################
-# TODO: workaround for Avira - hosts without owner name!
+# TODO: workaround for antivirus - hosts without owner name!
 # new category of audit based on Network Name: XXX as indicated by whilte-list for networks...
 # e.g.: Network Name: M247-LAS-VEGAS
 ###########################
