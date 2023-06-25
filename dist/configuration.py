@@ -86,7 +86,7 @@ PACKED_OUTPUT = False
 GeoLocationRadius = 0.1
 
 # local router
-ROUTER_IP = "192.168.0.1"
+ROUTER_IP = "192.168.178.1"
 
 # public IP
 # can be found here:
