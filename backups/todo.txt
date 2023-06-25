@@ -1,0 +1,4 @@
+# the interface of gmplot has been extended!
+make a copy of \venv\Lib\site-packages\gmplot\gmplot.py 
+replace it with \backups\gmplot.py 
+
