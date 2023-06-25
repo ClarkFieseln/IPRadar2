@@ -3,7 +3,7 @@ Real-time detection and defense against malicious network activity and policy vi
 
 [Article in Code Project](https://www.codeproject.com/Articles/5269206/IP-Radar-2 "IP Radar 2 Article in Code Project")
 
-[Demo Video](https://youtu.be/OlA49Ul1lmA "IP Radar 2 Demo Video")
+[Demo Video](https://youtu.be/NGNqWnDRBPk "IP Radar 2 Demo Video")
 
 
 ## IP Radar 2 - Intrusion Detection and Prevention in Real Time Based, e.g., on Geographical Locations of Hosts
