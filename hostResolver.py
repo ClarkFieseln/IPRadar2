@@ -109,7 +109,7 @@ class HostResolverClass(object):
             self.hostsResolved = self.hostsResolved + 1
             self.countersLock.release()
             if configuration.SOUND:
-                playsound('Sounds/dk-a2600_jump.mp3')
+                playsound('Sounds/smb_jump-small.mp3', block=False)
         except Exception as e: # avoid catching exceptions like SystemExit, KeyboardInterrupt, etc.
             print("__processHost(): Exception while trying to resolve IP ",  hostIP)
             print("__processHost(): Exception: ",  e)
@@ -122,7 +122,7 @@ class HostResolverClass(object):
                 self.hostsFailed = self.hostsFailed + 1
                 self.countersLock.release()
             if configuration.SOUND:
-                playsound('Sounds/smb_mariodie.mp3')
+                playsound('Sounds/smb_mariodie.mp3', block=False)
         finally:
             self.__mutexSolved.release()
     # end of __processHost()
