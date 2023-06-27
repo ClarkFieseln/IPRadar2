@@ -13,6 +13,12 @@
 
 ###########################
 # TODO: new feature ********** IMP ******************
+# Replace below "Show general" nodes with: nodes ext.
+#                                          nodes loc.
+###########################
+
+###########################
+# TODO: new feature ********** IMP ******************
 # QUIT-Function: popup needs to be quit every time a BAD guy is detected
 #           we force the attention of the user and take the chance to decide:
 #           - add to blacklist?
