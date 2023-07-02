@@ -153,6 +153,7 @@ SHOW_HOST_GOOD = True
 SHOW_HOST_UNKNOWN = True
 SHOW_HOST_BAD = True
 SHOW_HOST_KILLED = True
+SHOW_HOST_ACTIVE = True
 SHOW_HOST_PING = True
 SHOW_CONNECTION_GOOD = True
 SHOW_CONNECTION_UNKNOWN = True
@@ -259,7 +260,8 @@ BlackListCity = [
 ###############################
 WhiteListCity = [
 "Centreville", # ARIN in US - white-listed double by country and by city
-"San Francisco", 
+"San Francisco",
+# "Seattle", # Amazon  
 "Los Angeles"
 ]
 
