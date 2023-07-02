@@ -84,4 +84,8 @@ Note: in case of problems firewall rules can be easily removed any time.
     NOTE: in the following link you find a standalone Qt Designer which does not require downloading gigabytes of other software:
           https://build-system.fman.io/qt-designer-download
 
+NOTE: the python version, as well as the site-packages, may differ between the PyCharm terminal (venv) and a system terminal.
+      It is highly recommended to use the PyCharm terminal which points to an active project-specific virtual environment.
+
+
 
