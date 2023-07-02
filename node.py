@@ -26,8 +26,10 @@ class NodeDataClass:
     killed_process: str
     local: bool # local Network? incl. broadcast and multicast
     conn_established: bool
-    tx: int
-    rx: int 
+    tx: int # bytes transmitted by node
+    rx: int # bytes received by node
+    tx_kB: int # kiloBytes transmitted by node
+    rx_kB: int # kiloBytes received by node
     date: str
     time: str
     comm_partner_list: list
