@@ -190,6 +190,11 @@ class pysharkSniffer:
     def toggleShowKilledHosts(self):
         configuration.SHOW_HOST_KILLED = not configuration.SHOW_HOST_KILLED
         self.processorObject.plotMap()
+
+    #######################################################
+    def toggleShowActiveHosts(self):
+        configuration.SHOW_HOST_ACTIVE = not configuration.SHOW_HOST_ACTIVE
+        self.processorObject.plotMap()
         
     #######################################################
     def toggleShowPingedNegHosts(self):
