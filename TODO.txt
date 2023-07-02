@@ -7,15 +7,31 @@
 ###########################
 
 ###########################
-# TODO: new feature ********** IMP ******************
-# Add below "Show nodes": active conn.
+# TODO: use rx_kB and tx_kB instead of rx and tx in nodes
 ###########################
 
+#######################
+# TODO: improvement
+# add IPv6 support?
+# for now just deactivate IPv6 on your network interface.
+#######################
+
+##################
+# TODO: new feature
+# show current connections that are:
+# waiting/listening also with a symbol on the side towards corresponding IP
+##################
+
 ###########################
-# TODO: new feature ********** IMP ******************
-# Replace below "Show general" nodes with: nodes ext.
-#                                          nodes loc.
-###########################
+# TODO: new feature
+# add an "interface" between running Javascript and IPRadar2
+# in order to have a smooth update of infos on the browser..
+# e.g. INTERACTIVE MAP (as we did in old IPRadar):
+# * select line and show infos (RX, TX bytes, timestampt).. Labels in Google Maps
+# * show nr. of packets/bytes and date of each connection in title
+# * select on GUI after selection on maps
+# * etc.
+##################
 
 ###########################
 # TODO: new feature ********** IMP ******************
@@ -51,7 +67,7 @@
 # WARNING: if kiddy behind Telekom-Deutschland then complete Telekom blocked!!!
 #      - when range blocked need USER CONFIRMATION first !!!!!!!!!!!!!
 #        but dont block anything...just buffer...use different thread????
-# WARNING: not yet clear if EMPTY owners really bad, we may block GOOD BIG things...
+# WARNING: not yet clear if EMPTY owners really bad, we may block GOOD important things...
 # bocking rule of a RANGE of IPs, extracted from infos obtained with Whosip
 ###########################
 
@@ -71,8 +87,6 @@
 
 #######################
 # TODOs - some BUGs:
-# if we start without NW then it does not work
-# if we close and open laptop then it does not work
 # USE_DOUBLE_BUFFER
 # handle broadcast, multicast and other protocols in a proper manner
 #    locals, multicast, broadcast, etc.:
@@ -85,35 +99,8 @@
 #######################
 
 #######################
-# TODO: improvement
-# divide config.ini in appropriate "sections"
-#######################
-
-#######################
-# TODO: improvement
-# add IPv6 support?
-# for now just deactivate IPv6 on your network interface.
-#######################
-
-#######################
 # TODO: new feature
 # replace list of nodes in GUI with a sortable table
-#######################
-
-#######################
-# TODO: solve BUG
-# markers with same geo-location are NOT distributed in a "circle"
-#######################
-
-#######################
-# TODO: improvement
-# see if there is a way to obtain the COMPUTER NAME of a machine in the lcoal NW
-#######################
-
-#######################
-# TODO: new feature
-# option to detect own location instead of using fix values from config.ini (see MY_LATITUDE, etc.)
-# this way we can e.g. see if we really appear somewhere else when we use a VPN.
 #######################
 
 ###########################
@@ -159,12 +146,6 @@
 
 ###########################
 # TODO: new feature
-# add an "interface" between running Javascript and IPRadar2
-# in order to have a smooth update of infos on the browser..
-###########################
-
-###########################
-# TODO: new feature
 # set/unset BAD directly on browser (manually)
 ###########################
 
@@ -182,7 +163,7 @@
 
 ###########################
 # TODO: new feature
-# PORTS SCANNER
+# PORTS SCANNER e.g. on suspicious nodes
 # what for? which ports?
 ###########################
 
@@ -207,23 +188,8 @@
 ##################
 
 ##################
-# TODO: new feature
-# INTERACTIVE MAP:
-# * select line and show infos (RX, TX bytes, timestampt).. Labels in Google Maps
-# * show nr. of packets/bytes and date of each connection in title
-# * select on GUI after selection on maps
-# * etc.
-##################
-
-##################
 # TODO: improvement 
 # add IPs detected with netstat which are NOT in node_dict...e.g. connections established "before" running IPRadar2
-##################
-
-##################
-# TODO: new feature
-# show current connections that are:
-# waiting/listening also with a symbol on the side towards corresponding IP
 ##################
 
 ##################
@@ -235,7 +201,7 @@
 
 ##################
 # TODO: new feature
-# show TRACERT results on map
+# show TRACERT results on map (as we did in the old IPRadar)
 ##################
 
 ####################
