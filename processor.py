@@ -539,6 +539,7 @@ class ProcessorClass(object):
         SHOW_HOST_UNKNOWN = configuration.SHOW_HOST_UNKNOWN
         SHOW_HOST_BAD = configuration.SHOW_HOST_BAD
         SHOW_HOST_KILLED = configuration.SHOW_HOST_KILLED
+        SHOW_HOST_ACTIVE = configuration.SHOW_HOST_ACTIVE
         SHOW_HOST_PING = configuration.SHOW_HOST_PING
         SHOW_CONNECTION_GOOD = configuration.SHOW_CONNECTION_GOOD
         SHOW_CONNECTION_UNKNOWN = configuration.SHOW_CONNECTION_UNKNOWN
@@ -613,7 +614,7 @@ class ProcessorClass(object):
                                     latitude_bad_local_list.append(self.node_dict[dstNode].lat_plot)
                                     longitude_bad_local_list.append(self.node_dict[dstNode].lon_plot)
                     # add marker RED of source
-                    if SHOW_NODES and (SHOW_HOST_BAD or (SHOW_HOST_KILLED and srcNode.killed==True) or (SHOW_HOST_PING and srcNode.ping==False)):
+                    if SHOW_NODES and (SHOW_HOST_BAD or (SHOW_HOST_ACTIVE and srcNode.conn_established==True) or (SHOW_HOST_KILLED and srcNode.killed==True) or (SHOW_HOST_PING and srcNode.ping==False)):
                         #############
                         # killed nodes override other colors
                         if srcNode.killed:
@@ -704,7 +705,7 @@ class ProcessorClass(object):
                                         longitude_local_list.append(self.node_dict[dstNode].lon_plot)
                     # add marker UNKNOWN source
                     if srcNode.host_resolved == False:
-                        if SHOW_NODES and (SHOW_HOST_UNKNOWN or (SHOW_HOST_KILLED and srcNode.killed==True) or (SHOW_HOST_PING and srcNode.ping==False)):
+                        if SHOW_NODES and (SHOW_HOST_UNKNOWN or (SHOW_HOST_ACTIVE and srcNode.conn_established==True) or (SHOW_HOST_KILLED and srcNode.killed==True) or (SHOW_HOST_PING and srcNode.ping==False)):
                             if "(unknown)" in srcNode.host:
                                 #############
                                 # killed nodes override other colors
@@ -725,7 +726,7 @@ class ProcessorClass(object):
                                 gmap.marker(srcNode.lat_plot, srcNode.lon_plot, node_color, title=srcNode.host, bounce=BOUNCE, dot=srcNode.ping, tx=tx_int, rx=rx_int)
                     else:
                         # add marker GOOD source
-                        if SHOW_NODES and (SHOW_HOST_GOOD or (SHOW_HOST_KILLED and srcNode.killed==True) or (SHOW_HOST_PING and srcNode.ping==False)):
+                        if SHOW_NODES and (SHOW_HOST_GOOD or (SHOW_HOST_ACTIVE and srcNode.conn_established==True) or (SHOW_HOST_KILLED and srcNode.killed==True) or (SHOW_HOST_PING and srcNode.ping==False)):
                             markerColor = configuration.NODE_GOOD_COLOR
                             # we assume internal NW sources are always good (yes, even your wife! :-)
                             if srcNode.ip.startswith(self.netlocal):
@@ -1302,7 +1303,7 @@ class ProcessorClass(object):
                     dest_node = NodeDataClass(self.currentNodeNumber, destination, mac_dst, response_dst.latitude,  response_dst.longitude,  response_dst.latitude,  response_dst.longitude, 1,
                                         response_dst.country, pycountry.countries.get(alpha_2=response_dst.country),
                                         response_dst.region, response_dst.city,  host_dst, True, "", host_dst_resolved, ping=False, bad=False, killed=False, killed_process="", local=dst_is_local, conn_established=False,
-                                        tx=0, rx=0, date=strftime("%Y.%m.%d", gmtime()), time=strftime("%H:%M:%S", gmtime()), comm_partner_list=[], comm_partner_list_killed=[])
+                                        tx=0, rx=0, tx_kB=0, rx_kB=0, date=strftime("%Y.%m.%d", gmtime()), time=strftime("%H:%M:%S", gmtime()), comm_partner_list=[], comm_partner_list_killed=[])
                     self.node_dict[destination] = dest_node # new value in dict with key destination (its like an "append")  
                     self.currentNodeNumber = self.currentNodeNumber + 1
                 else:
@@ -1313,7 +1314,7 @@ class ProcessorClass(object):
                 source_node = NodeDataClass(self.currentNodeNumber, source, mac_src, response_src.latitude,  response_src.longitude,  response_src.latitude,  response_src.longitude,  1,
                                         response_src.country, pycountry.countries.get(alpha_2=response_src.country),
                                         response_src.region, response_src.city,  host_src, True, "",  host_src_resolved, ping=False, bad=False, killed=False, killed_process="", local=src_is_local, conn_established=False,
-                                        tx=0, rx=0, date=strftime("%Y.%m.%d", gmtime()), time=strftime("%H:%M:%S", gmtime()), comm_partner_list=[destination], comm_partner_list_killed=[])
+                                        tx=0, rx=0, tx_kB=0, rx_kB=0, date=strftime("%Y.%m.%d", gmtime()), time=strftime("%H:%M:%S", gmtime()), comm_partner_list=[destination], comm_partner_list_killed=[])
                 self.node_dict[source] = source_node # new value in dict with key source (its like an "append")  
                 self.currentNodeNumber = self.currentNodeNumber + 1
                 ######################
@@ -1328,7 +1329,7 @@ class ProcessorClass(object):
                     dest_node = NodeDataClass(self.currentNodeNumber, destination, mac_dst, response_dst.latitude,  response_dst.longitude,  response_dst.latitude,  response_dst.longitude,  1,
                                         response_dst.country, pycountry.countries.get(alpha_2=response_dst.country),
                                         response_dst.region, response_dst.city,  host_dst, True, "",  host_dst_resolved, ping=False, bad=False, killed=False, killed_process="", local=dst_is_local, conn_established=False,
-                                        tx=0, rx=0, date=strftime("%Y.%m.%d", gmtime()), time=strftime("%H:%M:%S", gmtime()), comm_partner_list=[], comm_partner_list_killed=[])
+                                        tx=0, rx=0, tx_kB=0, rx_kB=0, date=strftime("%Y.%m.%d", gmtime()), time=strftime("%H:%M:%S", gmtime()), comm_partner_list=[], comm_partner_list_killed=[])
                     self.node_dict[destination] = dest_node # new value in dict with key destination (its like an "append")  
                     self.currentNodeNumber = self.currentNodeNumber + 1
                 else:
@@ -1434,8 +1435,10 @@ class ProcessorClass(object):
         # TODO: why do we need 2 steps here?
         rx = int(self.node_dict[destination].rx) + int(packet.length)
         self.node_dict[destination].rx = rx
+        self.node_dict[destination].rx_kB = rx//1000
         tx = int(self.node_dict[source].tx) + int(packet.length)
         self.node_dict[source].tx = tx
+        self.node_dict[source].tx_kB = tx//1000
         
         # update self.node_dict_gui only if data is sent to outside: Local -> Extern
         if src_is_local == True:
