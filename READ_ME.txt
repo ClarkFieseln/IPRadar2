@@ -1,4 +1,4 @@
-Instructions to install IPRadar2 (2023.06.25): 
+Instructions to install IPRadar2 (2023.07.02): 
 
 **************************************************************************************************
 WARNING! 
@@ -62,6 +62,7 @@ Note: in case of problems firewall rules can be easily removed any time.
        pip install pyqt5 pyqt5-tools
        pip install pipreqs
     (optional: python -m pip install pywin32 (already covered at the end of 1)))
+    See step 12)
 
 9) Obtain the audio files as described in todo.txt found in folder Sounds.
 
@@ -79,5 +80,8 @@ Note: in case of problems firewall rules can be easily removed any time.
 11) Check the Code Project article IPRadar2 that explains how to use the tool:
        https://www.codeproject.com/Articles/5269206/IP-Radar-2
 
+12) if you edit mainWindow.ui, e.g. with Qt Designer, then you can execute gen_py_from_ui.bat in your PyCharm terminal in order to update Ui_mainWindow.py.
+    NOTE: in the following link you find a standalone Qt Designer which does not require downloading gigabytes of other software:
+          https://build-system.fman.io/qt-designer-download
 
 
