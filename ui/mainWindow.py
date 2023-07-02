@@ -204,10 +204,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 self.statusTxBytes.setStyleSheet('color: black')
                 self.labelTXBytes.setStyleSheet('color: black')
             self.toggle = not self.toggle
-        self.statusTxBytes.setText(str(txKiloBytes))
         #################
-        rxKiloBytes = str(self.sniffer.getNumberOfRxKiloBytes())
-        self.statusRxBytes.setText(rxKiloBytes)
+        self.statusTxBytes.setText(str(txKiloBytes))
+        rxKiloBytes = self.sniffer.getNumberOfRxKiloBytes()
+        self.statusRxBytes.setText(str(rxKiloBytes))
+        self.statusRxTxBytes.setText(str(rxKiloBytes + txKiloBytes))
 
     def __init__(self, parent=None):
         super(MainWindow, self).__init__(parent)
@@ -265,6 +266,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.pbToggleHeatmap.setChecked(configuration.HEATMAP)
         self.cbShowBad.setChecked(configuration.SHOW_HOST_BAD)
         self.cbShowKilled.setChecked(configuration.SHOW_HOST_KILLED)
+        self.cbShowActive.setChecked(configuration.SHOW_HOST_ACTIVE)
         self.cbShowMarkers.setChecked(configuration.SHOW_NODES)
         self.cbShowConnections.setChecked(configuration.SHOW_CONNECTIONS)
         self.cbShowConnectionsActive.setChecked(configuration.SHOW_CONNECTIONS_ACTIVE)
@@ -602,6 +604,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     @pyqtSlot()
     def on_cbShowKilled_clicked(self):
         self.sniffer.toggleShowKilledHosts()
+
+    @pyqtSlot()
+    def on_cbShowActive_clicked(self):
+        self.sniffer.toggleShowActiveHosts()
     
     @pyqtSlot()
     def on_cbShowKilledConn_clicked(self):

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1327</width>
-    <height>481</height>
+    <height>502</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -52,7 +52,7 @@
       <x>11</x>
       <y>169</y>
       <width>91</width>
-      <height>125</height>
+      <height>131</height>
      </rect>
     </property>
     <property name="autoFillBackground">
@@ -133,7 +133,7 @@
       <x>110</x>
       <y>170</y>
       <width>101</width>
-      <height>124</height>
+      <height>151</height>
      </rect>
     </property>
     <property name="autoFillBackground">
@@ -207,6 +207,19 @@
       <string>killed</string>
      </property>
     </widget>
+    <widget class="QCheckBox" name="cbShowActive">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>120</y>
+       <width>71</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>active</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QGroupBox" name="groupBoxStatusHosts">
     <property name="geometry">
@@ -251,9 +264,9 @@
     <property name="geometry">
      <rect>
       <x>11</x>
-      <y>298</y>
+      <y>304</y>
       <width>91</width>
-      <height>121</height>
+      <height>131</height>
      </rect>
     </property>
     <property name="autoFillBackground">
@@ -345,7 +358,7 @@
     <property name="geometry">
      <rect>
       <x>110</x>
-      <y>298</y>
+      <y>324</y>
       <width>101</width>
       <height>61</height>
      </rect>
@@ -403,7 +416,7 @@
     <property name="geometry">
      <rect>
       <x>220</x>
-      <y>262</y>
+      <y>288</y>
       <width>111</width>
       <height>97</height>
      </rect>
@@ -486,7 +499,7 @@
     <property name="geometry">
      <rect>
       <x>219</x>
-      <y>137</y>
+      <y>140</y>
       <width>111</width>
       <height>55</height>
      </rect>
@@ -551,9 +564,9 @@
     <property name="geometry">
      <rect>
       <x>220</x>
-      <y>194</y>
+      <y>198</y>
       <width>111</width>
-      <height>61</height>
+      <height>81</height>
      </rect>
     </property>
     <property name="title">
@@ -562,7 +575,7 @@
     <widget class="QLabel" name="statusRxBytes">
      <property name="geometry">
       <rect>
-       <x>56</x>
+       <x>60</x>
        <y>34</y>
        <width>51</width>
        <height>20</height>
@@ -601,8 +614,34 @@
     <widget class="QLabel" name="statusTxBytes">
      <property name="geometry">
       <rect>
-       <x>56</x>
+       <x>60</x>
        <y>13</y>
+       <width>51</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelRXTXBytes">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>57</y>
+       <width>51</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Tot. [KB]:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="statusRxTxBytes">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>55</y>
        <width>51</width>
        <height>20</height>
       </rect>
@@ -683,7 +722,7 @@
       <x>338</x>
       <y>23</y>
       <width>131</width>
-      <height>161</height>
+      <height>181</height>
      </rect>
     </property>
    </widget>
@@ -706,7 +745,7 @@
       <x>477</x>
       <y>23</y>
       <width>531</width>
-      <height>447</height>
+      <height>471</height>
      </rect>
     </property>
    </widget>
@@ -743,7 +782,7 @@
     <property name="geometry">
      <rect>
       <x>338</x>
-      <y>298</y>
+      <y>322</y>
       <width>131</width>
       <height>121</height>
      </rect>
@@ -856,7 +895,7 @@
     <property name="geometry">
      <rect>
       <x>349</x>
-      <y>298</y>
+      <y>322</y>
       <width>81</width>
       <height>16</height>
      </rect>
@@ -869,7 +908,7 @@
     <property name="geometry">
      <rect>
       <x>339</x>
-      <y>189</y>
+      <y>213</y>
       <width>131</width>
       <height>101</height>
      </rect>
@@ -956,7 +995,7 @@
     <property name="geometry">
      <rect>
       <x>110</x>
-      <y>368</y>
+      <y>391</y>
       <width>221</width>
       <height>51</height>
      </rect>
@@ -993,7 +1032,7 @@
       <x>1016</x>
       <y>23</y>
       <width>301</width>
-      <height>447</height>
+      <height>471</height>
      </rect>
     </property>
     <property name="toolTip">
@@ -1020,7 +1059,7 @@
     <property name="geometry">
      <rect>
       <x>11</x>
-      <y>420</y>
+      <y>444</y>
       <width>458</width>
       <height>51</height>
      </rect>
@@ -1033,7 +1072,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>439</y>
+      <y>462</y>
       <width>439</width>
       <height>22</height>
      </rect>
@@ -1086,8 +1125,8 @@
    <widget class="QLabel" name="statusHostsRequested">
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>500</y>
+      <x>156</x>
+      <y>517</y>
       <width>31</width>
       <height>20</height>
      </rect>
@@ -1099,8 +1138,8 @@
    <widget class="QLabel" name="labelHostsRequested">
     <property name="geometry">
      <rect>
-      <x>214</x>
-      <y>502</y>
+      <x>90</x>
+      <y>519</y>
       <width>61</width>
       <height>16</height>
      </rect>
