@@ -1,12 +1,15 @@
 ###########################
+# improvement:
 # adapt code to fulfill PEP 8
 ###########################
 
 ###########################
+# improvement:
 # replace print() with logging.info(), logging.warning() and logging.error() as it corresponds
 ###########################
 
 ###########################
+# new feature:
 # show other connection states, in addition to ESTABLISHED:
 # states: LISTEN, SYN-SENT, SYN-RECEIVED, ESTABLISHED, FIN-WAIT-1, FIN-WAIT-2, CLOSE-WAIT, CLOSING, LAST-ACK,
   TIME-WAIT, and the fictional state CLOSED
@@ -14,6 +17,7 @@
 ###########################
 
 ###########################
+# improvement:
 # use rx_kB and tx_kB instead of rx and tx in nodes
 ###########################
 
