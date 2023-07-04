@@ -1,29 +1,36 @@
 ###########################
-# TODO: adapt code to fulfill PEP 8
+# adapt code to fulfill PEP 8
 ###########################
 
 ###########################
-# TODO: replace print() with logging.info(), logging.warning() and logging.error() as it corresponds
+# replace print() with logging.info(), logging.warning() and logging.error() as it corresponds
 ###########################
 
 ###########################
-# TODO: use rx_kB and tx_kB instead of rx and tx in nodes
+# show other connection states, in addition to ESTABLISHED:
+# states: LISTEN, SYN-SENT, SYN-RECEIVED, ESTABLISHED, FIN-WAIT-1, FIN-WAIT-2, CLOSE-WAIT, CLOSING, LAST-ACK,
+  TIME-WAIT, and the fictional state CLOSED
+# RFC 739: https://datatracker.ietf.org/doc/html/rfc793
+###########################
+
+###########################
+# use rx_kB and tx_kB instead of rx and tx in nodes
 ###########################
 
 #######################
-# TODO: improvement
+# improvement:
 # add IPv6 support?
 # for now just deactivate IPv6 on your network interface.
 #######################
 
 ##################
-# TODO: new feature
+# new feature:
 # show current connections that are:
 # waiting/listening also with a symbol on the side towards corresponding IP
 ##################
 
 ###########################
-# TODO: new feature
+# new feature:
 # add an "interface" between running Javascript and IPRadar2
 # in order to have a smooth update of infos on the browser..
 # e.g. INTERACTIVE MAP (as we did in old IPRadar):
@@ -34,7 +41,7 @@
 ##################
 
 ###########################
-# TODO: new feature ********** IMP ******************
+# new feature: ********** IMP ******************
 # QUIT-Function: popup needs to be quit every time a BAD guy is detected
 #           we force the attention of the user and take the chance to decide:
 #           - add to blacklist?
@@ -42,14 +49,14 @@
 ###########################
 
 ###########################
-# TODO: new feature ********** IMP ******************
+# new feature: ********** IMP ******************
 # start NetworkTrafficView automatically on start -> option   (# note: for checking NW connections e.g. avira-VPN - strange names of servers...)
 # add a button to start it only once..one instance only..check first...
 # NOTE: long period of CPU at 12% due to this tool !!!
 ###########################
 
 ###########################
-# TODO: new feature ********** IMP ******************
+# new feature: ********** IMP ******************
 # search in IPs - or SORT - use Table ***************
 #
 # IMPLEMENT like this: use combo-box from Ping -> make sortable...and when selected -> select in list (similar to selection when clicking killed process...)
@@ -57,13 +64,13 @@
 ###########################
 
 ###########################
-# TODO: workaround for antivirus - hosts without owner name!
+# workaround for antivirus: hosts without owner name!
 # new category of audit based on Network Name: XXX as indicated by whilte-list for networks...
 # e.g.: Network Name: M247-LAS-VEGAS
 ###########################
     
 ###########################
-# TODO: new feature ********** IMP ******************
+# new feature: ********** IMP ******************
 # WARNING: if kiddy behind Telekom-Deutschland then complete Telekom blocked!!!
 #      - when range blocked need USER CONFIRMATION first !!!!!!!!!!!!!
 #        but dont block anything...just buffer...use different thread????
@@ -72,7 +79,7 @@
 ###########################
 
 #########################################
-# TODOs - general:
+# general:
 # clean up code:
 #    check TODOs
 #    rename functions and variables
@@ -86,8 +93,13 @@
 # implement live capture on/off
 
 #######################
-# TODOs - some BUGs:
+# some BUGs:
 # USE_DOUBLE_BUFFER
+# ...
+#######################
+
+#######################
+# new feature:
 # handle broadcast, multicast and other protocols in a proper manner
 #    locals, multicast, broadcast, etc.:
 #    10.0.0.0 - 10.255.255.255
@@ -99,88 +111,88 @@
 #######################
 
 #######################
-# TODO: new feature
+# new feature:
 # replace list of nodes in GUI with a sortable table
 #######################
 
 ###########################
-# TODO: code cleaning
+# code cleaning:
 # remove deprecated counters for failed-past, resol-past
 # on GUI (hidden below): statusHostsRequested, statusHostsFailed, statusHostsFailedOld, statusHostsResolvedOld
 ###########################
 
 ###########################
-# TODO: new feature
+# new feature:
 # bocking rule of a RANGE of IPs, extracted from infos obtained with Whosip
 ###########################
 
 ###########################
-# TODO: check/remove workaround in processor.py
+# check/remove workaround in processor.py
 # why do we need to check against sanitized_ip?
 ###########################
 
 ###########################
-# TODO: new feature
+# new feature:
 # out to console & file simultaneously
 # > pipe ? script ? 
 # fork stdout and stderr both to file and to shell ?
 ###########################
 
 ###########################
-# TODO: improvement
+# improvement:
 # replace lists with dicts
 # to avoid for [] + for [] every time..
 ###########################
 
 ###########################
-# TODO: new feature
+# new feature:
 # create Option to use Google API KEY
 # but from File !
 ###########################
     
 ###########################
-# TODO: new feature
+# new feature:
 # set Labels for known IPs manually
 # and then store in file
 ###########################
 
 ###########################
-# TODO: new feature
+# new feature:
 # set/unset BAD directly on browser (manually)
 ###########################
 
 ###########################
-# TODO: new feature
+# new feature:
 # when blocking consider also a time-window ?
 # network protocol, port number, etc. ?
 ###########################
 
 ###########################
-# TODO: improvement / BUG?
+# improvement / BUG correction:
 # activation / deactivation of add-blocking-rule-to-firewall
 # e.g. not only adding rule when host resolved, but also later if re-enabled, etc.
 ###########################
 
 ###########################
-# TODO: new feature
+# new feature:
 # PORTS SCANNER e.g. on suspicious nodes
 # what for? which ports?
 ###########################
 
 ########################
-# TODO: improvement
+# improvement:
 # killed-IPs get lost when reading log_DATE.pcapng alone...
 # the information killed=True is in the corresponding report_DATE.txt, it can be parsed from there..
 # ..or store infos somwhere else? e.g. in a killed.txt/npy file?
 ########################
 
 ##################
-# TODO: BUG
+# BUG correction:
 # why and when do "we" write None in lat, lon? default? Geo-calculation?
 ##################
 
 ##################
-# TODO: improvement
+# improvement:
 # try to RUN_AS_ADMIN and still:
 # - be able to debug
 # - reuse current App (dont start a new instance)
@@ -188,24 +200,24 @@
 ##################
 
 ##################
-# TODO: improvement 
+# improvement:
 # add IPs detected with netstat which are NOT in node_dict...e.g. connections established "before" running IPRadar2
 ##################
 
 ##################
-# TODO: new feature
+# new feature:
 # integrate pynids?
 # https://pypi.org/project/pynids/
 # wrapper for libnids, a Network Intrusion Detection System library offering sniffing, IP defragmentation, TCP stream reassembly and TCP port scan detection
 ##################
 
 ##################
-# TODO: new feature
+# new feature:
 # show TRACERT results on map (as we did in the old IPRadar)
 ##################
 
 ####################
-''' TODO: new features
+''' new features:
     Use this tool in combination with one or more of these tools (interfaces available?):
     Wireshark
     ipscan
