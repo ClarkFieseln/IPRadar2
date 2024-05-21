@@ -9,4 +9,4 @@ PyQt5_sip==12.12.1
 pyshark==0.6
 pythonping==1.0.8
 pywin32==306
-Requests==2.31.0
+Requests==2.32.0
