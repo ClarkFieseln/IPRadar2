@@ -555,7 +555,7 @@ class ProcessorClass(object):
         # API key
         # TODO: enter key here (from a file)
         ##############
-        # gmap.apikey = "AIzaKyOeLFMnA__VmQDiZRiuz4kKjF_c9r1kWe8"
+        # gmap.apikey = "AI...e8"
         # gmap.apikey = "free"
         
         # Grid
