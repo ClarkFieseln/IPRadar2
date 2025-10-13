@@ -1,7 +1,7 @@
 # IPRadar2
 Real-time detection and defense against malicious network activity and policy violations (exploits, port-scanners, advertising, telemetry, state surveillance, etc.)
 
-[Article in Code Project](https://www.codeproject.com/Articles/5269206/IP-Radar-2 "IP Radar 2 Article in Code Project")
+[Article in Code Project](https://www.codeproject.com/articles/IP-Radar-2-Real-Time-Detection-and-Defense "IP Radar 2 Article in Code Project")
 
 [Video Playlist](https://www.youtube.com/watch?v=NGNqWnDRBPk&list=PLX24fhcibpHXfTWYm8Vfhc4SB6sIGgtck "IP Radar 2 Demo Video")
 
