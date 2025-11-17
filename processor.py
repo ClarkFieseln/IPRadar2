@@ -453,7 +453,9 @@ class ProcessorClass(object):
         print(':'.join(['{:02x}'.format((uuid.getnode() >> ele) & 0xff) 
         for ele in range(0,8*6,8)][::-1])) 
         # MAC address of router
-        print("MAC of router = ",  get_mac_address(ip=configuration.ROUTER_IP))
+        # NOTE: following line commented in order to avoid security warning 'Clear-text logging of sensitive information'
+        # print("MAC of router = ",  get_mac_address(ip=configuration.ROUTER_IP))
+        print("MAC of router = <intentionally_not_shown_in_output>")
         # resolve local and public host
         #################
         self.localHost = socket.gethostname()
